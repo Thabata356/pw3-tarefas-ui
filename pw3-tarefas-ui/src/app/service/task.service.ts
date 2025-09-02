@@ -15,5 +15,9 @@ export class TaskService {
     return this.http.get<Task[]>(this.apiUrl); // Acessa a Api pela variável, especifica o método get e qual o retorno
   }
 
+  deleteTask(id: number): Observable<void>{
+    return this.http.delete<void>(`${this.apiUrl}/${id}`); //Usar crase, não aspas simples
+  }
+
   constructor() { }
 }
