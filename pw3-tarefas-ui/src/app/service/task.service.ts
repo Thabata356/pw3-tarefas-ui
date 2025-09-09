@@ -19,5 +19,9 @@ export class TaskService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`); //Usar crase, não aspas simples
   }
 
+  criarTask(task:Task): Observable<Task>{
+    return this.http.post<Task>(this.apiUrl, task); //Tirar task depois?
+  }
+
   constructor() { }
 }
