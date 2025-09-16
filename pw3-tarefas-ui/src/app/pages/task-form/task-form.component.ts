@@ -2,6 +2,7 @@ import { Task } from './../../model/task';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TaskService } from '../../service/task.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-form',
@@ -11,6 +12,8 @@ import { TaskService } from '../../service/task.service';
   styleUrls: ['./task-form.component.css'],
 })
 export class TaskFormComponent {
+
+  constructor(private router: Router) {}
 
   private fb = inject(FormBuilder);
   private taskService = inject(TaskService);
@@ -38,6 +41,7 @@ export class TaskFormComponent {
         next: (novaTask) => {
           alert("Tarefa criada com sucesso");
           this.taskForm.reset();
+          this.router.navigate(['/tasks']);
         }, error: (e) => {
           alert("Não foi possível cadastrar a Tarefa.");
         }
