@@ -5,6 +5,8 @@ import { LoginService } from '../../service/login.service';
 //import { Router } from 'express';
 import { Router } from '@angular/router';
 
+// Luiza Gonçalves e Thabata Vitoria
+
 @Component({
   selector: 'app-login',
   standalone: true,
